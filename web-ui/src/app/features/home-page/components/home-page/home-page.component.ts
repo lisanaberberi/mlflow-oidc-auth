@@ -5,7 +5,6 @@ import { AuthService } from 'src/app/shared/services';
 import { EXPERIMENTS_COLUMN_CONFIG, MODELS_COLUMN_CONFIG } from './home-page.config';
 import { AccessKeyDialogData } from 'src/app/shared/components/modals/access-key-modal/access-key-modal.interface';
 import { UserDataService } from 'src/app/shared/services/data/user-data.service';
-import { PublishToZenodoModalComponent } from 'src/app/shared/components/modals/publish-to-zenodo-modal/publish-to-zenodo-modal.component';
 import {
   CurrentUserModel,
   ExperimentPermission,
@@ -54,8 +53,8 @@ export class HomePageComponent implements OnInit {
     window.location.href = '/';
   }
 
-
-  onPublishToZenodoClick() {
-    this.dialog.open(PublishToZenodoModalComponent);
+  redirectToZenodo() {
+    window.location.href = 'https://zenodo.org';
   }
+
 }
