@@ -64,9 +64,9 @@ wait_server_ready() {
 check_yarn_and_node_version
 python_preconfigure
 source venv/bin/activate
-mlflow server --dev --app-name oidc-auth --host 0.0.0.0 --port 8080 &
+mlflow server --dev --app-name oidc-auth --host 0.0.0.0 --port 5000 &
 mlflow=$!
-wait_server_ready localhost:8080/health
+wait_server_ready localhost:5000/health
 ui_preconfigure
 yarn --cwd web-ui watch
 
