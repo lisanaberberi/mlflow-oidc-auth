@@ -27,6 +27,11 @@ class AppConfig:
         self.OIDC_CLIENT_ID = os.environ.get("OIDC_CLIENT_ID", None)
         self.OIDC_CLIENT_SECRET = os.environ.get("OIDC_CLIENT_SECRET", None)
 
+        # Add Zenodo environment variables for OAuth
+        self.ZENODO_CLIENT_ID = os.environ.get("ZENODO_CLIENT_ID", None)
+        self.ZENODO_CLIENT_SECRET = os.environ.get("ZENODO_CLIENT_SECRET", None)
+        self.ZENODO_REDIRECT_URI = os.environ.get("ZENODO_REDIRECT_URI", None)
+
         # session
         self.SESSION_TYPE = os.environ.get("SESSION_TYPE", "cachelib")
         self.SESSION_PERMANENT = os.environ.get("SESSION_PERMANENT", str(False)).lower() in ("true", "1", "t")

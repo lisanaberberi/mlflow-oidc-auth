@@ -1,9 +1,14 @@
 from mlflow.server.handlers import _get_rest_path
+from mlflow_oidc_auth.views import authentication
 
 HOME = "/"
 LOGIN = "/login"
 LOGOUT = "/logout"
 CALLBACK = "/callback"
+ZENODO_CALLBACK = "/zenodo/callback"
+LOGIN_ZENODO = '/zenodo/login'
+ZENODO_DASHBOARD = '/zenodo/dashboard'
+
 
 STATIC = "/oidc/static/<path:filename>"
 UI = "/oidc/ui/<path:filename>"
