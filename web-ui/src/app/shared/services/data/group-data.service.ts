@@ -18,10 +18,10 @@ export class GroupDataService {
   }
 
   getAllExperimentsForGroup(groupName: string) {
-    return this.http.get<ExperimentModel[]>(API_URL.EXPERIMENTS_FOR_GROUP.replace('${groupName}', groupName))
+    return this.http.get<ExperimentModel[]>(API_URL.EXPERIMENTS_FOR_GROUP.replace('${groupName}', encodeURIComponent(groupName)))
   }
 
   getAllRegisteredModelsForGroup(groupName: string) {
-    return this.http.get<ModelModel[]>(API_URL.MODELS_FOR_GROUP.replace('${groupName}', groupName));
+    return this.http.get<ModelModel[]>(API_URL.MODELS_FOR_GROUP.replace('${groupName}', encodeURIComponent(groupName)));
   }
 }

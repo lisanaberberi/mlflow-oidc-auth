@@ -52,7 +52,7 @@ export class GroupPermissionDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.groupName = this.route.snapshot.paramMap.get('id') ?? '';
+    this.groupName = decodeURIComponent(this.route.snapshot.paramMap.get('id') ?? '');
 
     this.groupDataService.getAllExperimentsForGroup(this.groupName)
       .subscribe((experiments) => this.experimentDataSource = experiments);

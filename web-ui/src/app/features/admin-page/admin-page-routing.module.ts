@@ -12,7 +12,7 @@ import { AdminPageRoutesEnum } from './config';
 
 const getBreadcrumb = (route: string) => {
   const [entity, id] = route.split('/')
-  return `${entity.charAt(0).toUpperCase() + entity.slice(1)} / ${id}`;
+  return `${entity.charAt(0).toUpperCase() + entity.slice(1)} / ${decodeURIComponent(id)}`;
 };
 
 const routes: Routes = [

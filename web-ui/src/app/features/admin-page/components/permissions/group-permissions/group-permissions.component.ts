@@ -53,6 +53,6 @@ export class GroupPermissionsComponent implements OnInit {
   }
 
   handleUserEdit({ group }: GroupModel): void {
-    this.router.navigate([`../${AdminPageRoutesEnum.GROUP}/` + group], { relativeTo: this.route })
+    this.router.navigate([`../${AdminPageRoutesEnum.GROUP}/${encodeURIComponent(group)}`], { relativeTo: this.route })
   }
 }
